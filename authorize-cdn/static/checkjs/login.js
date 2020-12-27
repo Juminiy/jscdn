@@ -1,6 +1,6 @@
  function authorize(){
         $.post({
-            url: "[[@{/ajax/check/authorize}]]",
+            url: "/ajax/check/authorize",
             data: { username:$("#username").val(),password:$("#password").val()},
             success: function (data){
                 if(data.toString()=="ok"){
@@ -16,7 +16,7 @@
 
     function check(){
         $.post({
-            url:"[[@{/ajax/check/username}]]",
+            url:"/ajax/check/username",
             data: {username:$("#username").val()},
             success: function (data){
                 if(data.toString()=="ok"){

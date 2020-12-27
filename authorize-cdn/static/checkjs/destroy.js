@@ -1,6 +1,6 @@
 function usernameCheck(){
         $.post({
-            url:"[[@{/ajax/check/username}]]",
+            url:"/ajax/check/username",
             data: { username:$("#username").val()},
             success: function (data){
                 if(data.toString()=="no"||data.toString()=="danger"){

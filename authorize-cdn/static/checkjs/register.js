@@ -1,7 +1,7 @@
   var DATA;
     function emailChar() {
         $.post({
-            url:"[[@{/mail/RegisterCode}]]",
+            url:"/mail/RegisterCode",
             data: { email:$("#email").val()}, //字符条绝对不是绿色的
             success: function (data) {
                 DATA=data.toString();
@@ -39,7 +39,7 @@
     function usernameCheck(){
         var username=document.getElementById("username").value;
         $.post({
-            url:"[[@{/ajax/check/username}]]",
+            url:"/ajax/check/username",
             data: { username:$("#username").val()},
             success: function (data){
                 if(data.toString()=="no"){
@@ -93,7 +93,7 @@
         var email=document.getElementById("email").value;
         var reg = /^([a-zA-Z]|[0-9])(\w|\-)+@[a-zA-Z0-9]+\.([a-zA-Z]{2,4})$/;
         $.post({
-            url:"[[@{/ajax/check/email}]]",
+            url:"/ajax/check/email",
             data: { email:$("#email").val()},
             success: function (data){
                 if(data.toString()==="no"){
@@ -121,7 +121,7 @@
     function phoneCheck() {
         var phone=document.getElementById("phone").value;
         $.post({
-            url:"[[@{/ajax/check/phone}]]",
+            url:"/ajax/check/phone",
             data: { phone:$("#phone").val()},
             success: function (data){
                 if(data.toString()==="no"){
